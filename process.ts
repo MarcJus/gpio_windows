@@ -9,6 +9,11 @@ interface CommandReturn{
     message: string
 }
 
+/**
+ * 
+ * @param command Commande a executer
+ * @returns Informations sur la commande
+ */
 function executeCommand(command: string): CommandReturn{
     let result: CommandReturn = {
         error: false,
@@ -30,13 +35,19 @@ function executeCommand(command: string): CommandReturn{
     return result;
 }
 
-function checkCommand(command: string): boolean{
-    if(command.startsWith("Erreur commande : "))
-        return false;
-    if(command.startsWith("Stderr : "))
-        return false;
-    return true;
-}
+// function checkCommand(command: string): boolean{
+//     if(command.startsWith("Erreur commande : "))
+//         return false;
+//     if(command.startsWith("Stderr : "))
+//         return false;
+//     return true;
+// }
+
+/**
+ * @async
+ * @param key Touche entrée
+ * @returns Informations sur le retour de la commande
+ */
 
 export default async function(key: Key): Promise<CommandReturn>{
     let result: CommandReturn = {error: false, stderr: false, message: ""};
