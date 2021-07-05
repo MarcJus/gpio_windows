@@ -1,5 +1,5 @@
 import net, {Server} from 'net'
-import process, {Key} from './process';
+import process, {Key} from './process'
 
 const server: Server = net.createServer();
 console.log("Serveur lancé");
