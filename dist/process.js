@@ -41,6 +41,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 var child_process_1 = require("child_process");
 var commands_1 = __importDefault(require("./commands"));
+/**
+ *
+ * @param command Commande a executer
+ * @returns Informations sur la commande
+ */
 function executeCommand(command) {
     var result = {
         error: false,
@@ -61,13 +66,18 @@ function executeCommand(command) {
     console.log(result);
     return result;
 }
-function checkCommand(command) {
-    if (command.startsWith("Erreur commande : "))
-        return false;
-    if (command.startsWith("Stderr : "))
-        return false;
-    return true;
-}
+// function checkCommand(command: string): boolean{
+//     if(command.startsWith("Erreur commande : "))
+//         return false;
+//     if(command.startsWith("Stderr : "))
+//         return false;
+//     return true;
+// }
+/**
+ * @async
+ * @param key Touche entrée
+ * @returns Informations sur le retour de la commande
+ */
 function default_1(key) {
     return __awaiter(this, void 0, void 0, function () {
         var result, command, success;

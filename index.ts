@@ -2,7 +2,8 @@ import net, {Server} from 'net'
 import process, {Key} from './process'
 
 const server: Server = net.createServer();
-console.log("Serveur lancé");
+const port: number = 3000;
+console.log("Serveur lancé sur le port "+3000);
 
 server.on("connection", (socket) => {
     const clientAdress: string | undefined = socket.remoteAddress;
@@ -23,7 +24,8 @@ server.on("connection", (socket) => {
             socket.write(response);
         } else {
             response = "success";
-            socket.write(response);
+            const response_buff: Buffer = Buffer.from(response);
+            socket.write(response_buff);
         }
         console.log("Réponse : "+response);
     });
@@ -34,4 +36,7 @@ server.on("connection", (socket) => {
     })
 })
 
-server.listen(3000);
+server.listen(port);
+export default {
+    process,
+}

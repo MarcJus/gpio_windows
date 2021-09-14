@@ -41,6 +41,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 var axios_1 = __importDefault(require("axios"));
 var qs_1 = __importDefault(require("qs"));
+var chrome_path = "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\"";
 function key_5() {
     return __awaiter(this, void 0, void 0, function () {
         var promise_return;
@@ -68,9 +69,9 @@ function key_5() {
 }
 exports["default"] = {
     1: "code",
-    2: "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" https://www.google.com/",
-    3: "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" https://cloud.boosteroid.com/dashboard/",
-    4: "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" https://platypus.go.yj.fr/",
+    2: chrome_path + " https://www.google.com/",
+    3: chrome_path + " https://cloud.boosteroid.com/dashboard/",
+    4: "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" https://www.google.com/",
     5: function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -82,12 +83,13 @@ exports["default"] = {
     6: "wt.exe ssh pi@rspm",
     7: "wt.exe",
     8: "wt.exe -p \"kali-linux\"",
-    9: "ipconfig",
+    9: "\"C:\\Users\\jusse\\AppData\\Local\\Postman\\Postman.exe\"",
     "*": "ipconfig",
     0: "ipconfig",
     "#": "ipconfig",
     A: "ipconfig",
     B: "ipconfig",
     C: "ipconfig",
-    D: "ipconfig"
+    D: "ipconfig",
+    "start_server": "wt.exe \"C:\\Users\\jusse\\OneDrive\\Bureau\\serveur 1.17\\start.bat\""
 };

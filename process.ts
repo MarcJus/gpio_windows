@@ -1,8 +1,11 @@
 import {exec} from 'child_process'
 import commands from './commands'
 
-export type Key = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "A" | "B" |"C" | "D" | "*" | "#"
+export type Key = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "A" | "B" |"C" | "D" | "*" | "#" | "start_server"
 
+/**
+ * Informations sur la commande executée
+ */
 interface CommandReturn{
     error: boolean,
     stderr: boolean,

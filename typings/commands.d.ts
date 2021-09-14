@@ -1,0 +1,20 @@
+declare const _default: {
+    1: string;
+    2: string;
+    3: string;
+    4: string;
+    5: () => Promise<boolean>;
+    6: string;
+    7: string;
+    8: string;
+    9: string;
+    "*": string;
+    0: string;
+    "#": string;
+    A: string;
+    B: string;
+    C: string;
+    D: string;
+    start_server: string;
+};
+export default _default;

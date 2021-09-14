@@ -42,7 +42,8 @@ exports.__esModule = true;
 var net_1 = __importDefault(require("net"));
 var process_1 = __importDefault(require("./process"));
 var server = net_1["default"].createServer();
-console.log("Serveur lancé");
+var port = 3000;
+console.log("Serveur lancé sur le port " + 3000);
 server.on("connection", function (socket) {
     var clientAdress = socket.remoteAddress;
     console.log("Nouvelle connexion : " + clientAdress);
@@ -51,7 +52,7 @@ server.on("connection", function (socket) {
         console.log(clientAdress + " : Timeout");
     });
     socket.on("data", function (data) { return __awaiter(void 0, void 0, void 0, function () {
-        var dataString, command, response;
+        var dataString, command, response, response_buff;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -67,7 +68,8 @@ server.on("connection", function (socket) {
                     }
                     else {
                         response = "success";
-                        socket.write(response);
+                        response_buff = Buffer.from(response);
+                        socket.write(response_buff);
                     }
                     console.log("Réponse : " + response);
                     return [2 /*return*/];
@@ -80,4 +82,7 @@ server.on("connection", function (socket) {
             console.log("Il y a eu une erreur");
     });
 });
-server.listen(3000);
+server.listen(port);
+exports["default"] = {
+    process: process_1["default"]
+};
